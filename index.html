@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <title>随机密码生成工具</title>
+</head>
+<body>
+
+  <h1>随机密码生成工具</h1>
+
+  <div>
+    <label for="passwordType">密码类型：</label>
+    <input type="checkbox" id="digits" checked> <label for="digits">数字</label>
+    <input type="checkbox" id="uppercase" checked> <label for="uppercase">大写字母</label>
+    <input type="checkbox" id="lowercase" checked> <label for="lowercase">小写字母</label>
+    <input type="checkbox" id="specialChars" checked> <label for="specialChars">特殊字符</label>
+  </div>
+
+  <div>
+    <label for="quantity">生成数量：</label>
+    <input type="number" id="quantity" value="20" min="1">
+  </div>
+
+  <div>
+    <label for="passwordLength">密码长度：</label>
+    <select id="passwordLength">
+      <option value="6">6</option>
+      <option value="8">8</option>
+      <option value="12">12</option>
+      <option value="16" selected>16</option>
+      <option value="20">20</option>
+      <option value="24">24</option>
+      <option value="30">30</option>
+      <option value="36">36</option>
+      <option value="48">48</option>
+      <option value="64">64</option>
+      <option value="128">128</option>
+    </select>
+  </div>
+
+  <button onclick="generatePassword()">生成密码</button>
+
+  <div id="password-container"></div>
+
+  <button onclick="copyPasswords()">复制密码</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
